@@ -38,10 +38,18 @@
     // };
 
 // exercice 6
-    $reponce = $bdd->query('SELECT * FROM shows ORDER BY title');
-    while ($donnees = $reponce->fetch()) {
-        echo '<p>'. $donnees['title'].' par '.$donnees['performer'].', le '.$donnees['date'].' à '.$donnees['startTime'];
-    };
+    // $reponce = $bdd->query('SELECT * FROM shows ORDER BY title');
+    // while ($donnees = $reponce->fetch()) {
+    //     echo '<p>'. $donnees['title'].' par '.$donnees['performer'].', le '.$donnees['date'].' à '.$donnees['startTime'];
+    // };
 
+// exercice 7
+    $reponse = $bdd->query('SELECT * FROM clients ORDER BY lastName');
+    while($donnees = $reponse->fetch()){
+        echo '<p>nom: '. $donnees['lastName']. ' prenom: '. $donnees['firstName']. ' date de naissance: '.$donnees['birthDate'];
+        if ($donnees['card'] == 1) {
+            echo ', carte de fidélité: oui '. ', numéro de carte fidélité: '.$donnees['cardNumber'];
+        };
+    };
 
  ?>
