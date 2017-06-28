@@ -12,11 +12,19 @@
     // };
 
 // exercice 2
+    // $reponce = $bdd->query('SELECT * FROM showTypes');
+    // while ($donnees = $reponce->fetch()) {
+    //     echo "<p>type de show: ".$donnees['type'];
+    // };
 
-    $reponce = $bdd->query('SELECT * FROM showTypes');
-    while ($donnees = $reponce->fetch()) {
-        echo "<p>type de show: ".$donnees['type'];
+// exercice 3
+    $reponse = $bdd->query('SELECT * FROM clients LIMIT 20');
+    while($donnees = $reponse->fetch()){
+        echo '<p>nom: '. $donnees['lastName']. ' prenom: '. $donnees['firstName'];
     };
+
+
+
 
 
  ?>
