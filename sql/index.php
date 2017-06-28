@@ -18,7 +18,13 @@
     // };
 
 // exercice 3
-    $reponse = $bdd->query('SELECT * FROM clients LIMIT 20');
+    // $reponse = $bdd->query('SELECT * FROM clients LIMIT 20');
+    // while($donnees = $reponse->fetch()){
+    //     echo '<p>nom: '. $donnees['lastName']. ' prenom: '. $donnees['firstName'];
+    // };
+
+// exercice 4
+    $reponse = $bdd->query('SELECT * FROM clients WHERE cardNumber');
     while($donnees = $reponse->fetch()){
         echo '<p>nom: '. $donnees['lastName']. ' prenom: '. $donnees['firstName'];
     };
