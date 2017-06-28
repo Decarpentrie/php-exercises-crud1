@@ -24,12 +24,18 @@
     // };
 
 // exercice 4
-    $reponse = $bdd->query('SELECT * FROM clients WHERE cardNumber');
+    // $reponse = $bdd->query('SELECT * FROM clients WHERE cardNumber');
+    // while($donnees = $reponse->fetch()){
+    //     echo '<p>nom: '. $donnees['lastName']. ' prenom: '. $donnees['firstName'];
+    // };
+
+// exercice 5
+    $reponse = $bdd->query('SELECT * FROM clients ORDER BY lastName');
     while($donnees = $reponse->fetch()){
-        echo '<p>nom: '. $donnees['lastName']. ' prenom: '. $donnees['firstName'];
+        if (substr($donnees['lastName'],  0, 1) == "M") {
+            echo '<p>nom: '. $donnees['lastName']. ' prenom: '. $donnees['firstName'];
+        };
     };
-
-
 
 
 
