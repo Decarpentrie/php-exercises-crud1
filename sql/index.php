@@ -5,11 +5,18 @@
     } catch (Exception $e) {
         die('Erreur : ' . $e->getMessage());
     };
+    //
+    // $reponse = $bdd->query('SELECT * FROM clients');
+    // while($donnees = $reponse->fetch()){
+    //     echo '<p>nom: '. $donnees['lastName']. ' prenom: '. $donnees['firstName'];
+    // };
 
-    $reponse = $bdd->query('SELECT * FROM clients');
+// exercice 2
 
-    while($donnees = $reponse->fetch()){
-        echo '<p>nom: '. $donnees['lastName']. ' prenom:'. $donnees['firstName'];
+    $reponce = $bdd->query('SELECT * FROM showTypes');
+    while ($donnees = $reponce->fetch()) {
+        echo "<p>type de show: ".$donnees['type'];
     };
+
 
  ?>
