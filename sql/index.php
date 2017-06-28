@@ -30,13 +30,18 @@
     // };
 
 // exercice 5
-    $reponse = $bdd->query('SELECT * FROM clients ORDER BY lastName');
-    while($donnees = $reponse->fetch()){
-        if (substr($donnees['lastName'],  0, 1) == "M") {
-            echo '<p>nom: '. $donnees['lastName']. ' prenom: '. $donnees['firstName'];
-        };
-    };
+    // $reponse = $bdd->query('SELECT * FROM clients ORDER BY lastName');
+    // while($donnees = $reponse->fetch()){
+    //     if (substr($donnees['lastName'],  0, 1) == "M") {
+    //         echo '<p>nom: '. $donnees['lastName']. ' prenom: '. $donnees['firstName'];
+    //     };
+    // };
 
+// exercice 6
+    $reponce = $bdd->query('SELECT * FROM shows ORDER BY title');
+    while ($donnees = $reponce->fetch()) {
+        echo '<p>'. $donnees['title'].' par '.$donnees['performer'].', le '.$donnees['date'].' à '.$donnees['startTime'];
+    };
 
 
  ?>
